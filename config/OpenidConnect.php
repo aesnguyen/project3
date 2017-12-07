@@ -9,72 +9,71 @@ return [
 	*	Cấu hình URL cho Openid Provider
 	*	url_op_authen : nơi xử lý request của rp
 	*/
-	'url_op_authen' => 'http://bv3.dev/authen',
-	
+	'url_op_authen' => env('URL_SERVER').'/authen',
 
 	/**
 	* 	Cấu hình domain hay issuer(iss) trong id_token trả về cho RP
 	*	Provider Name = config('app.name')
 	*/
-	'domain' => 'bv3.dev',
+	'domain' => env('URL_SERVER'),
 
 	/**
 	*	Cấu hình id token Endpoint
 	*/
-	'token_endpoint' => 'http://bv3.dev/token',
+	'token_endpoint' => env('URL_SERVER').'token',
 
 	/**
 	*	Cấu hình Info Endpoint
 	*/
-	'info_endpoint' => 'http://bv3.dev/info-user',
+	'info_endpoint' => env('URL_SERVER').'/info-user',
 
 	/**
 	*	Cấu hình remove client endpoint
 	*/
-	'delete_endpoint' => 'http://bv3.dev/admin/remove-oidc',
+	'delete_endpoint' => env('URL_SERVER').'/admin/remove-oidc',
 
 	/**
 	*	Cấu hình callback URL, nơi để OP trả kết quả (id_token)
 	*/
-	'uri_rp_callback' => 'http://bv3.dev/authen-success',
+	'uri_rp_callback' => env('URL_SERVER').'/authen-success',
 
 	/**
 	*	Cấu hình URL, nơi để OP trả kết quả đăng ký client
 	*/
-	'uri_rp_get_result' => 'http://bv3.dev/get-result-register',
+	'uri_rp_get_result' => env('URL_SERVER').'/get-result-register',
 
 	/**
 	*	Cấu hình registration endpoint
 	*/
-	'registration_endpoint' => 'http://bv3.dev/registration',
+	'registration_endpoint' => env('URL_SERVER').'/registration',
 
 	/**
 	* 	Cấu hình check session endpoint, nơi check xem user còn logged trong OP không, nếu đã logout thì
 	*	gửi thông báo cho bên RP, để RP logout user ra.
 	*/
-	'check_session_endpoint' => 'http://bv3.dev/check-session-iframe',
+	'check_session_endpoint' => env('URL_SERVER').'/check-session-iframe',
 
 	//------------------------------------------------------------------------
 
 	/**
 	*	Cấu hình Url gửi request (vai RP)
 	*/
-	'url_rp_idp' => 'http://bv3.dev/login-with-op',
+	'url_rp_idp' => env('URL_SERVER').'/login-with-op',
 
 	/**
 	*	Cấu hình Url để xử lý resopnse từ OP (vai RP)
 	*/
-	'redirect_url' => 'http://bv3.dev/authen-success',
+	'redirect_url' => env('URL_SERVER').'/authen-success',
 
 	/**
 	*	cấu hình url force logout
 	*/
-	'url_force_logout' => 'http://bv3.dev/logout',
+	'url_force_logout' => env('URL_SERVER').'/logout',
 
 	/**
 	*	Cấu hình origin url
 	*/
-	'url_origin' => 'http://bv3.dev',
+	'url_origin' => env('URL_SERVER'),
 	
 	/**
 	*	Cấu hình tên cho cookie lưu khi user đăng nhập

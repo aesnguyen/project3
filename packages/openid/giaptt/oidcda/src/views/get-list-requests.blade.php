@@ -63,13 +63,13 @@ Danh sách các Requests
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Đóng"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title">Từ chối yêu cầu</h4>
+                                        <h4 class="modal-title">Từ chối yêu cầu 1</h4>
                                     </div>
                                     <form>
                                         <div class="modal-body">
                                             
                                             <div class="text-center">
-                                                <p>Xác nhận từ chối yêu cầu này?</p>
+                                                <p>Xác nhận từ chối yêu cầu này? 1</p>
                                                 <input type="hidden" id="request_id" name="request_id" value="">
                                                 <input type="hidden" id="type_btn_id" name="type_btn_id" value="">
                                             </div>

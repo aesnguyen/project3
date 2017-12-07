@@ -482,6 +482,7 @@ class AuthLocalController extends Controller
     {
         // chuyển trạng thái của yêu cầu có 'domain' = $op_reg_url sang "đã đc xử lý"
         $op_reg_url = $request->registration_endpoint;
+        // var_dump($op_reg_url); die();
         $result = $request->registration_result;
         if($result == 'false')
         {

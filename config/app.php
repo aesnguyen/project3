@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://bv3.dev'),
+    'url' => env('APP_URL', 'http://hainn3.topicanative.edu.vn'),
 
     /*
     |--------------------------------------------------------------------------

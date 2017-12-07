@@ -9,72 +9,71 @@ return [
 	*	Cấu hình URL cho Openid Provider
 	*	url_op_authen : nơi xử lý request của rp
 	*/
-	'url_op_authen' => 'http://hainn3.topicanative.edu.vn:801/authen',
-	
+	'url_op_authen' => env('URL_SERVER').'/authen',
 
 	/**
 	* 	Cấu hình domain hay issuer(iss) trong id_token trả về cho RP
 	*	Provider Name = config('app.name')
 	*/
-	'domain' => 'hainn3.topicanative.edu.vn:801',
+	'domain' => env('URL_SERVER'),
 
 	/**
 	*	Cấu hình id token Endpoint
 	*/
-	'token_endpoint' => 'http://hainn3.topicanative.edu.vn:801/token',
+	'token_endpoint' => env('URL_SERVER').'token',
 
 	/**
 	*	Cấu hình Info Endpoint
 	*/
-	'info_endpoint' => 'http://hainn3.topicanative.edu.vn:801/info-user',
-	
+	'info_endpoint' => env('URL_SERVER').'/info-user',
+
 	/**
 	*	Cấu hình remove client endpoint
 	*/
-	'delete_endpoint' => 'http://hainn3.topicanative.edu.vn:801/admin/remove-oidc',
+	'delete_endpoint' => env('URL_SERVER').'/admin/remove-oidc',
 
 	/**
 	*	Cấu hình callback URL, nơi để OP trả kết quả (id_token)
 	*/
-	'uri_rp_callback' => 'http://hainn3.topicanative.edu.vn:801/authen-success',
+	'uri_rp_callback' => env('URL_SERVER').'/authen-success',
 
 	/**
 	*	Cấu hình URL, nơi để OP trả kết quả đăng ký client
 	*/
-	'uri_rp_get_result' => 'http://hainn3.topicanative.edu.vn:801/get-result-register',
+	'uri_rp_get_result' => env('URL_SERVER').'/get-result-register',
 
 	/**
 	*	Cấu hình registration endpoint
 	*/
-	'registration_endpoint' => 'http://hainn3.topicanative.edu.vn:801/registration',
+	'registration_endpoint' => env('URL_SERVER').'/registration',
 
 	/**
 	* 	Cấu hình check session endpoint, nơi check xem user còn logged trong OP không, nếu đã logout thì
 	*	gửi thông báo cho bên RP, để RP logout user ra.
 	*/
-	'check_session_endpoint' => 'http://hainn3.topicanative.edu.vn:801/check-session-iframe',
+	'check_session_endpoint' => env('URL_SERVER').'/check-session-iframe',
 
 	//------------------------------------------------------------------------
 
 	/**
 	*	Cấu hình Url gửi request (vai RP)
 	*/
-	'url_rp_idp' => 'http://hainn3.topicanative.edu.vn:801/login-with-op',
+	'url_rp_idp' => env('URL_SERVER').'/login-with-op',
 
 	/**
 	*	Cấu hình Url để xử lý resopnse từ OP (vai RP)
 	*/
-	'redirect_url' => 'http://hainn3.topicanative.edu.vn:801/authen-success',
+	'redirect_url' => env('URL_SERVER').'/authen-success',
 
 	/**
 	*	cấu hình url force logout
 	*/
-	'url_force_logout' => 'http://hainn3.topicanative.edu.vn:801/logout',
-	
+	'url_force_logout' => env('URL_SERVER').'/logout',
+
 	/**
 	*	Cấu hình origin url
 	*/
-	'url_origin' => 'http://hainn3.topicanative.edu.vn:801',
+	'url_origin' => env('URL_SERVER'),
 	
 	/**
 	*	Cấu hình tên cho cookie lưu khi user đăng nhập
@@ -85,7 +84,7 @@ return [
 	*	Cấu hình tên cho cookie, khi admin đăng nhập
 	*/
 	'name_cookie_admin' => 'loggedinstt1ad',
-
+	
 	/**
 	*	tên cookie khi user của viện ngoài đăng nhập vào.
 	*/

@@ -89,6 +89,27 @@ class OPController extends Controller
     */
     public function postVerifyAcc(Request $request)
     {
+        //logout sessoin cu
+
+        // Authen::deleteUserExternal();
+        // Auth::logout();
+        // $ss = str_random(32); // session_state
+        // $client_id = Session::get('client_id');
+        // Session::forget('list_providers');
+        // Session::forget('loggedin_user');
+        // Cookie::queue(Cookie::forget(config('OpenidConnect.name_cookie_ex')));
+        // Cookie::queue(Cookie::forget('accessToken'));
+        // Cookie::queue(Cookie::forget(config('OpenidConnect.name_cookie')));
+        // Cookie::queue(Cookie::forget('client_id_ss_endpoint'));
+        // Cookie::queue(Cookie::forget('session_state'));
+        // Cookie::queue(Cookie::forget('sess_stt'));
+        // return redirect('login')
+        //         ->withCookie(Cookie::forget('accessToken'))
+        //         ->withCookie(Cookie::forget(config('OpenidConnect.name_cookie')))
+        //         ->withCookie(Cookie::forget(config('OpenidConnect.name_cookie_ex')));
+                
+        // authen
+
         $email = $request->email;
         $pass = $request->_hashPass;
 
@@ -96,6 +117,7 @@ class OPController extends Controller
         $session_id = Session::get('sess_id');
         
         $uri_callback = Session::get('uri_callback');
+
         $nonce = Session::get('nonce');
         $client_id = Session::get('client_id');
 
