@@ -89,6 +89,10 @@ return [
 	*	tên cookie khi user của viện ngoài đăng nhập vào.
 	*/
 	'name_cookie_ex' => 'tokenLogged',
+	/**
+	*	tên cookie khi user của viện ngoài đăng nhập vào.
+	*/
+	'login_with_certificate' => env('URL_SERVER').'/login-with-certificate',
 
 ];
 

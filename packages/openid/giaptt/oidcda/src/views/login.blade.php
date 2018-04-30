@@ -66,20 +66,24 @@
                                     <div class="form-group">
                                         <div class="col-md-6">
                                             <select id="mySelect" onchange="myFunction()" class="form-control">
-                                                <option value="" selected="true">Choose an OpenId Server </option>
+                                            	<option value="" selected="true">Choose an other way </option>
                                                 <?php if(is_array($list_op)){?>
                                                 @foreach ($list_op as $key => $value)
                                                     <option value ="{{ $value['authen_endpoint'] }}">{{ $value['name_provider'] }}</option>
                                                 @endforeach
                                                 <?php } ?>
+                                                <option value="LoginC">Login with Certificate</option>
                                                 <script>
                                                     function myFunction() {
-                                                        
                                                         var txt = document.getElementById("mySelect").value;
-                                                        // window.location = url_send_request + "?option=" + value_of_option;
-                                                        var url_send_request = "<?php echo config('OpenidConnect.url_rp_idp'); ?>";
-                                                        window.location = url_send_request + "?option=" + txt;
-                                                        
+                                                        if (txt == "LoginC") {
+                                                            var url = "<?php echo config('OpenidConnect.url_origin'); ?>";
+                                                        	window.location = url +"/login-with-certificate";
+                                                        }else {
+	                                                        // window.location = url_send_request + "?option=" + value_of_option;
+	                                                        var url_send_request = "<?php echo config('OpenidConnect.url_rp_idp'); ?>";
+	                                                        window.location = url_send_request + "?option=" + txt;
+                                                        }
                                                     }
                                                 </script>
                                             </select> 

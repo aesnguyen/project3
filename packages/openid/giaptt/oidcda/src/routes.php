@@ -22,6 +22,10 @@ Route::group(['middleware' => 'web'], function(){
 	Route::get('logout', 'giaptt\oidcda\controllers\AuthLocalController@getLogout');
 	Route::post('logout', 'giaptt\oidcda\controllers\AuthLocalController@postLogout');
 
+	// Login with certificate
+	Route::get('login-with-certificate', 'giaptt\oidcda\controllers\AuthLocalController@getLoginWithCertificate');
+	Route::post('login-with-certificate', 'giaptt\oidcda\controllers\AuthLocalController@postLoginWithCertificate');
+
 	// Route Register
 	Route::get('register', 'giaptt\oidcda\controllers\AuthLocalController@getRegister');
 	Route::post('register', 'giaptt\oidcda\controllers\AuthLocalController@postRegister');

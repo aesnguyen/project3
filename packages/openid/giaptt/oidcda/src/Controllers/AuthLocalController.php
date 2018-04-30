@@ -201,6 +201,70 @@ class AuthLocalController extends Controller
     }
 
     /**
+    *   Login with certificate
+    */
+    public function getLoginWithCertificate(Request $request){
+
+        if(Authen::isUserLogged())
+        {
+            $idUser = Authen::getIdUser();
+            Auth::loginUsingId($idUser);
+            return redirect('home');
+        }
+        $session_id = str_random(32);
+        Session::put('sess_id', $session_id);
+
+        
+        return view('oidcda::login-with-certificate', ['sess_id' => $session_id]);
+    }
+
+    public function postLoginWithCertificate(Request $request){
+        $email = $request->email;
+        $pass = $request->_hashPass;
+        // giá trị pass client gửi lên là: sha256( sha256(pass) + session_id)
+        // giá trị session_id sử dụng để chống tấn công phát lại, vì sau khi nó được
+        // tạo mới mỗi lần login
+        $session_id = Session::get('sess_id');
+        
+        // truy vấn bảng 'admins' vs email = $email
+        $isExist = DB::table('users')->where('email', $email)->first();
+        if ($isExist != null)
+        {
+            $hPass = $isExist->password;
+            if ($pass == hash('sha256', $hPass . $session_id) )
+            {
+                // login user manual
+                $idUser = $isExist->id;
+                Auth::loginUsingId($idUser);
+
+                $cookie = $email . '|' . $idUser;
+
+                Session::put('loggedin_user', $email);
+                Cookie::queue(config('OpenidConnect.name_cookie'), $cookie, 120);
+
+                return redirect('home')->withCookie(config('OpenidConnect.name_cookie'), $cookie, 120); 
+            }
+            else
+            {
+                $session_id = str_random(32);
+                Session::put('sess_id', $session_id);
+                $list_providers = Session::get('list_providers');
+                return view('oidcda::login', ['sess_id' => $session_id, 'list_op' => $list_providers])
+                    ->with('err', 'Sai email/password !');
+            }
+        }
+        else
+        {
+            //dd(false);
+            $session_id = str_random(32);
+            Session::put('sess_id', $session_id);
+            $list_providers = Session::get('list_providers');
+            return view('oidcda::login', ['sess_id' => $session_id, 'list_op' => $list_providers])
+                ->with('err', 'Sai email/password !');
+        }
+    }
+
+    /**
     *   Logout
     */
     public function getLogout()
