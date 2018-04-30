@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use Giaptt\Oidcda\Authen;
+use Oidcda\Authen;
 
 class IsAdminCheck
 {

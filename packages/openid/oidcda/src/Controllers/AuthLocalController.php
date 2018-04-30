@@ -1,6 +1,6 @@
 <?php
 
-namespace Giaptt\Oidcda\Controllers;
+namespace Oidcda\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Admin;
-use Giaptt\Oidcda\IdProvider;
-use Giaptt\Oidcda\JsonWT;
+use Oidcda\IdProvider;
+use Oidcda\JsonWT;
 use Session;
-use Giaptt\Oidcda\Authen;
+use Oidcda\Authen;
 use Response;
 use Cookie;
 

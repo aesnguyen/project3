@@ -1,0 +1,17 @@
+{
+    "name": "James/oidcda",
+    "description": "Demo Openid Connect",
+    "authors": [
+        {
+            "name": "HaiNN",
+            "email": "ngochai27595@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Oidcda\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}

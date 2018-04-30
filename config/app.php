@@ -181,7 +181,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Giaptt\Oidcda\OpenidConnectServiceProvider::class,
+        Oidcda\OpenidConnectServiceProvider::class,
 
     ],
 
@@ -232,7 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
 		
-        'Authen' => Giaptt\Oidcda\Authen::class,
+        'Authen' => Oidcda\Authen::class,
 
     ],
 

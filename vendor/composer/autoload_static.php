@@ -89,7 +89,7 @@ class ComposerStaticInit94b3dc22041d8c3f1d4374d125b880a2
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
-            'Giaptt\\Oidcda\\' => 14,
+            'Oidcda\\' => 14,
         ),
         'F' => 
         array (
@@ -255,9 +255,9 @@ class ComposerStaticInit94b3dc22041d8c3f1d4374d125b880a2
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'Giaptt\\Oidcda\\' => 
+        'Oidcda\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/packages/openid/giaptt/oidcda/src',
+            0 => __DIR__ . '/../..' . '/packages/openid/oidcda/src',
         ),
         'Faker\\' => 
         array (

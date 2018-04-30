@@ -25,7 +25,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Giaptt\\Oidcda\\": "packages/openid/giaptt/oidcda/src"
+            "Oidcda\\": "packages/openid/oidcda/src"
             
         }
     },
