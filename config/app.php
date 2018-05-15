@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Bệnh viện 3',
+    'name' => 'Bệnh viện 1',
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://hainn3.topicanative.edu.vn'),
+    'url' => env('APP_URL', 'http://hainn.topicanative.edu.vn'),
 
     /*
     |--------------------------------------------------------------------------
